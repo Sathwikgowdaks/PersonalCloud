@@ -1,0 +1,16 @@
+# Ignore Node.js dependencies, as they will be installed inside the container
+node_modules
+
+# Ignore log files
+npm-debug.log
+
+# Ignore the Dockerfile and dockerignore file itself
+Dockerfile
+.dockerignore
+
+# Ignore Git files
+.git
+.gitignore
+
+# CRITICAL: Ignore the environment file
+.env
