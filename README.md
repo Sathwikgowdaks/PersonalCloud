@@ -40,10 +40,8 @@ Run on the central server:
 ```bash
 docker run -d --name controller -p 3000:3000 sathwikks21/privatecloud-app controller
 ```
-### 1. 
-Run on the central server:
+### 2. Providers
 ```bash
-Run on any laptop/PC in the LAN to contribute storage:
 docker run -d --name provider -v /path/to/storage:/app/storage sathwikks21/privatecloud-app provider --controller-ip <CONTROLLER_IP>
 ```
 Sathwik Gowda K S
