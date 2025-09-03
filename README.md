@@ -39,55 +39,12 @@ The project image is available on Docker Hub:
 Run on the central server:
 ```bash
 docker run -d --name controller -p 3000:3000 sathwikks21/privatecloud-app controller
-2. Provider (Storage Node)
-
+```
+### 1. 
+Run on the central server:
+```bash
 Run on any laptop/PC in the LAN to contribute storage:
-
 docker run -d --name provider -v /path/to/storage:/app/storage sathwikks21/privatecloud-app provider --controller-ip <CONTROLLER_IP>
-
-
-Replace /path/to/storage with the folder for storing files
-
-Replace <CONTROLLER_IP> with the LAN IP of the controller
-
-3. Consumer (User Access)
-
-Consumers interact with the system using their unique key.
-
-Upload a file:
-
-curl -F "file=@mydoc.pdf" http://<CONTROLLER_IP>:3000/upload?key=<YOUR_KEY>
-
-
-Download a file:
-
-curl http://<CONTROLLER_IP>:3000/download/mydoc.pdf?key=<YOUR_KEY> -o mydoc.pdf
-
-Example Workflow
-
-Start the controller on one server
-
-Run providers on laptops/PCs in the LAN
-
-Consumer receives a key from the controller
-
-Consumer uploads a file → stored on available provider
-
-If a provider is full, uploads are routed to another provider
-
-Consumer can download their file anytime using the key
-
-Future Enhancements
-
-Persistent metadata store (currently in-memory)
-
-Web UI for consumers
-
-Replication across nodes
-
-End-to-end encryption
-
-Author
-
+```
 Sathwik Gowda K S
 PES University
